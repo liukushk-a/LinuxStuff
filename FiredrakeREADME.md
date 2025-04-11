@@ -23,7 +23,7 @@ e a quel punto runnare ancora
 
 e dovresti ottenere qualcosa come:
 
-    /home/tuo_utente/venv-firedrake/bin/python3
+    /home/tuo_utente/firedrake/bin/python3
 
 Per disattivare firedrake e tornare sul python d'ambiente puoi fare:
 
