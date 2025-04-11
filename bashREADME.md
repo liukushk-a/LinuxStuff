@@ -190,3 +190,5 @@ oppure in caso di stringhe:
     fi
 
 
+In questo modo ottieni una sintassi più moderna e più solida.
+
