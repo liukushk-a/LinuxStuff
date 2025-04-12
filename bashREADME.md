@@ -192,3 +192,48 @@ oppure in caso di stringhe:
 
 In questo modo ottieni una sintassi più moderna e più solida.
 
+Concentriamoci ora sulla condizione elif, che in matlab è elseif. La logica dietro è la stessa, vuoi mettere un ulteriore controllo sulla condizione.
+
+    #! /bin/bash
+
+    variabile=1
+
+    if (( $variabile >= 10 ))
+    then 
+        echo "the condition is true"	
+    elif (($variabile > 10))
+    then
+        echo "the condition is true"
+    else
+        echo "the condition is false"
+    fi
+
+Fin quì nulla di nuovo, per vedere davvero la potenzialità di tutto ciò, bisonga dargli una variabile per cui una condizione sia vera e l'altra no, ad esempio:
+
+    #! /bin/bash
+
+    variabile=10
+
+    if (( $variabile >= 10 ))
+    then 
+        echo "the 1st condition is true"	
+    elif (($variabile > 10))
+    then
+        echo "the 2nd condition is true"
+    else
+        echo "the condition is false"
+    fi
+
+E infatti è vera solo la prima condizione.
+
+Vediamo adesso come fare per le condizioni di "and":
+
+    #! /bin/bash
+
+    variabile=20
+
+    if (( $variabile >= 12 )) && (($variabile <= 90))
+    then
+        echo "Età corretta per usare l'ascensore"
+    fi
+
