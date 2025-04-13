@@ -1,5 +1,5 @@
 # Comandi base BASH
-Cercherò di essere chiaro, ma in ogni caso, quasi tutto ciò che dirò può essere ritrovato in [questo video su YouTube](https://www.youtube.com/watch?v=e7BufAVwDiM&t=289s), ciò che manca invece l'ho trovato su internet per gli affri miei.
+Cercherò di essere chiaro, ma in ogni caso, quasi tutto ciò che dirò può essere ritrovato in [questo video su YouTube](https://www.youtube.com/watch?v=e7BufAVwDiM&t=289s), ciò che manca invece l'ho trovato su internet per gli affri miei; ad ogni modo, su internet è disponibile anche una [trascrizione al video](https://linuxhint.com/3hr_bash_tutorial/#5).
 
 Un file per essere in Bash deve finire con il .sh
 
@@ -636,4 +636,287 @@ Poi:
 Ottenendo sul terminale:
 
     3
+
+Una cosa interessante è che con il standard input possiamo leggere i file e usare ciò che c'è scritto per dare input. Vediamo come. Scriviamo un ciclo while che legga il file riga per riga:, ma attenzione, perchè devi specificare alla shell un file, dato che se non lo farai, userà la shell stessa come se fosse il file, quindi riscriverà tutto ciò che scrivi, vediamo come:
+
+    #!/bin/bash
+
+    while read line
+    do 
+        echo "$line"
+    done < "${1:-/dev/stdin}"
+
+Poi nel terminale scrivo:
+
+    ./esempio.sh
+
+Come vedi non gli hai dato un file, quindi tu scrivi sul terminale e lo script ti ripete ciò che scrivi pensando che arrivi da un file quando in realtà non è così.
+
+Allora ho create un file esempio.txt con 4 righe. Lo script è lo stesso, ma se ora sul terminale scrivo:
+
+    ./esempio.sh esempio.txt
+
+Vedi che ha letto le 4 righe e le ha stampate sulla shell.
+
+La cosa interessante è osservare com'è lo script... Perchè se lo script è con l'1:
+
+    #!/bin/bash
+
+    while read line
+    do 
+        echo "$line"
+    done < "${1:-/dev/stdin}"
+
+E lo lanci così:
+
+    ./esempio.sh esempio.txt
+
+Allora legge il primo input, ovvero ciò che hai scritto dopo il nome del programma, cioè il contenuto di esempio.txt, mentre invece se gli passi 0, quindi:
+
+    #!/bin/bash
+
+    while read line
+    do 
+        echo "$line"
+    done < "${0:-/dev/stdin}"
+
+Legge l'input numero 0, quindi ciò che contiene lo script stesso.
+
+La figata è che se tu facessi uno script che prende in input per qualche motivo più di un file, perchè nel codice con file diversi in input fa cose diverse, nel modo con cui gli dai i numeri capirà cosa deve fare con quale file, quindi se io avessi il codice:
+
+    #!/bin/bash
+
+    while read line
+    do 
+        echo "$line"
+    done < "${2:-/dev/stdin}"
+
+    ...il codice prosegue...
+
+E sul terminale facessi:
+
+    ./esempio.sh esempio1.txt esempio2.txt esempio3.txt
+
+Il read lo farebbe con esempio2.txt, ma questa cosa è utile se devi dare tanti file in input allo script.
+
+## Script output
+
+Dopo aver visto lo standard input, vediamo lo standard output e lo standard error. Quindi vediamo reindirizzare questi due a un file di testo. Usiamo un comando casuale per vedere il concetto:
+
+    #!/bin/bash
+
+    ls -al 1>stdout.txt 2>stderr.txt
+
+La dicitura 1, in questo caso, è associata allo standard output, che in sto caso saranno tutti i file e cartelle nella cartella in cui sto eseguendo lo script, mentre il 2 è lo standard error. Siccome sappiamo in questo caso che il comando è corretto, non ci sarà lo standard error e il file stderr.txt sarà vuoto. Se al contrario avessimo lanciato un comando invalido, avremmo solo il file dell'errore con del testo, ma quello dell'output vuoto.
+
+Possiamo anche trasferire input e output a un unico file. Perchè il problema è che se faccio lo script così:
+
+    #!/bin/bash
+
+    ls -al >file.txt
+
+La shell assumerà di default che questo sia lo standard output e l'errore sarà printato sul terminale.
+
+Ma se volessi avere un unico file per entrambi, la dicitura è questa:
+
+    #!/bin/bash
+
+    ls -al >file.txt 2>&1
+
+Così il file conterrà entrambi.Una scorciatoia per ottenere la stessa cosa è questa:
+
+    #!/bin/bash
+
+    ls -al >&file.txt
+
+## Mandare gli output da uno script all'altro
+
+Supponiamo di avere uno script con una variabile e di volera esportare in un altro script. ATTENZIONE: devi avere uno script con il nome preciso, quindi nello script da cui esporti la variabile, devi avere mettere il nome di uno script già esistente e già reso eseguibile col chmod.
+
+Vediamo un esempio semplice:
+
+- primo script:
+
+        #!/bin/bash
+
+        Messaggio="Tutto ok?"
+
+        export Messaggio
+        ./script2.sh
+
+- secondo script:
+
+        #!/bin/bash
+
+        echo "Il messaggio da parte di script1.sh è: $Messaggio"
+
+E se adesso sul terminale eseguo:
+
+    ./script1.sh
+
+Ottengo:
+
+    Il messaggio da parte di script1.sh è: Tutto ok?
+
+## String processing
+
+Proviamo a comparare dell stringhe, vedere se sono più lunghe o più corte o se sono uguali o robe così.
+
+Se volessi vedere se le stringhe sono uguali, lo script sarebbe:
+
+    #!/bin/bash
+
+    echo "Inserire prima stringa:"
+    read stringa1
+
+    echo "Inserire stringa 2:"
+    read stringa2
+
+    if [ $stringa1 == $stringa2 ]
+    then
+        echo "Le due stringhe sono uguali"
+    else
+        echo "Le due stringhe sono diverse"
+    fi
+
+In questo modo sto verificando che siano in tutto e per tutto uguali.
+
+Ma se volessimo vedere se una stringa è più piccola dell'altra? Possiamo fare così:
+
+    #!/bin/bash
+
+    echo "Inserire prima stringa:"
+    read stringa1
+
+    echo "Inserire stringa 2:"
+    read stringa2
+
+    if [ $stringa1 \< $stringa2 ]
+    then
+        echo "La prima stringa è più corta"
+    elif [ $stringa1 == $stringa2 ]
+    then
+        echo "Le due stringhe hanno la stessa lunghezza"
+    else
+        echo "La seconda stringa è più corta"
+    fi
+
+Se volessimo concatenare le stringhe, creando una nuova variabile, potremmo fare così:
+
+    #!/bin/bash
+
+    echo "Inserire prima stringa:"
+    read stringa1
+
+    echo "Inserire stringa 2:"
+    read stringa2
+
+    stringaConcatenata=$stringa1$stringa2
+    echo $stringaConcatenata
+
+ATTENZIONE: quì c'è una cosa carina, perchè devi stare attento, vedi che dopo il read tu chiami la variabile senza \$, perchè è la prima volta che la chiami, mentre quando poi la richiami devi usare la \$. 
+
+Una cosa carina che puoi fare quando gli dai una stringa è fartela ridare con la prima lettera maiuscola, tutta scritta con le maiuscole o tuttlo lo script in minuscole, lo script diventa:
+
+    #!/bin/bash
+
+    echo "Inserire prima stringa:"
+    read stringa1
+
+    echo ${stringa1^}
+    echo ${stringa1^^}
+    echo ${stringa1,,}
+
+## Numeri e aritmetica
+
+Se facessi:
+
+    #!/bin/bash
+
+    echo 3+2
+
+Non mi stampa 5, ma mi stampa 3+2. Questo accade perchè bash ha un modo strano di intendere i numeri, ma si può esplicitare che deve fare le operazioni in un paio di modi.
+
+Vediamo così:
+
+    #!/bin/bash
+
+    a=10
+    b=57
+
+    echo $(( a+b ))
+
+Vedo che lo stampa giusto. Il dollaro con le doppie tonde è per fare ogni operazione.
+
+Ci sono tutte le operazioni fondamentali:
+
+    #!/bin/bash
+
+    a=10
+    b=57
+
+    echo $(( a+b ))
+    echo $(( a-b ))
+    echo $(( a*b ))
+    echo $(( a/b ))
+    echo $(( a%b ))
+
+ATTENZIONE: il / è il quoto della divisione, mentre % ti restituisce il quoziente. Queste cose funzionano solo con i numeri interi, se vuoi usare la virgola, devi usare una sintassi diversa.
+
+Un altro modo per fare le operazioni è usare il expr, che sta per "expression":
+
+    #!/bin/bash
+
+    a=60
+    b=10
+
+    echo $(expr $a + $b )
+
+Nota che hai rimosso la doppia parentesi e il dollaro prima dell'expr ti ha creato una nuova variabile. Nota anche che ora ha messo i dollari prima di a e b, altrimenti ti stamperà soltanto a+b, e nota anche che  ora col dollaro sono obbligatori gli spazi tra le variabili e le operazioni aritmetiche.
+
+ATTENZIONE: expr non legge correttamente il prodotto, quindi devi scriverlo così:
+
+    echo $(expr $a \* $b )
+
+Vediamo ora come agire con le cifre decimali. Ci sono due possibilità, o con bc oppure con awd.
+
+Con bc (basic calculator), si fa così:
+
+    #!/bin/bash
+
+    a=6.81
+    b=10
+
+    somma=$(echo "scale=2; $a + $b" | bc)
+    differenza=$(echo "scale=2; $a - $b" | bc)
+    prodotto=$(echo "scale=2; $a * $b" | bc)
+    rapporto=$(echo "scale=2; $a / $b" | bc)
+
+    echo $somma
+    echo $differenza
+    echo $prodotto
+    echo $rapporto
+
+scale=2 imposta il numero di cifre decimali da usare. La sintassi è precisa e per questo non è immediata da ricordare.
+
+Con awk, invece, si procede così:
+
+    #!/bin/bash
+
+    a=6.81
+    b=10
+
+    somma=$(awk "BEGIN {print $a + $b }")
+    differenza=$(awk "BEGIN {print $a - $b }")
+    prodotto=$(awk "BEGIN {print $a * $b }")
+    rapporto=$(awk "BEGIN {print $a / $b }")
+
+    echo $somma
+    echo $differenza
+    echo $prodotto
+    echo $rapporto
+
+Anche quì la sintassi è piacevole come una calcio sui denti nella fase REM.
+
+## Dichiarazione comandi
 
