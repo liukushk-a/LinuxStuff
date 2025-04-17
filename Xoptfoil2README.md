@@ -1,4 +1,4 @@
-# Xoptfoil2
+# Installazione Xoptfoil2
 
 Per installare Xoptfoil2 devi andare sulla pagina Github:
 [Github Xoptfoil](https://github.com/jxjo/Xoptfoil2)
@@ -27,9 +27,14 @@ A questo punto il programma è installato e puoi aggiungerlo al bash.rc aggiunge
     # Xoptfoil2
     export PATH="$PATH:/home/liukushka/Desktop/Università/Magistrale/ProgettoAerodinamico/xoptfoil2/Xoptfoil2-1.0.5/linux/bin"
 
-Pronto all'azione. Se ti interessano dei link utili puoi dare un'occhiata a questi:
+Pronto all'azione. Se ti interessano dei link utili puoi dare un'occhiata a questo:
 
 [Pagina ufficiale del programma](https://jxjo.github.io/Xoptfoil2/)
 
-[Video YouTube interessante](https://www.youtube.com/watch?v=UScAV5kLq-M)
+# Appunti base di xoptfoil2
 
+Questi appunti sono basati su [questo tutorial](https://www.youtube.com/watch?v=UScAV5kLq-M&t=15s).
+
+Proviamo ad andare nella cartella che hai scaricato con Xoptfoil2, nella sezione examples e poi la sezione SD7003_camb_thick. 
+
+Apriamo il file SD7003_cdmin.inp e analizziamolo. 
