@@ -14,7 +14,7 @@ simbolo che il python di sistema è ancora intatto.
 
 Poi puoi attivare firedrake scrivendo:
 
-    source ~/firedrake/bin/activate
+    source ~/venv-firedrake/bin/activate
 
 e a quel punto runnare ancora
 
