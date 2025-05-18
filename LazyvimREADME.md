@@ -124,6 +124,12 @@ Per aprire lazygit dentro neovim, mi basta fare:
 
    <special> g 
 
-In questo modo ti si apre un menu con cui puoi fare diverse azioni.
+In questo modo ti si apre un menu con cui puoi fare diverse azioni. Concentriamoci per adesso su questo:
+
+   <special> gg 
+
+Così hai aperto lazygit nella cartella del file che stai scrivendo. Per muoverti usi le lettere hjkl, ma anche le freccette, come sempre.
+
+Poi dentro lazygit posso usare la c per fare il commit, la p minuscola per il pull e la P maiuscola per il push.
 
 
