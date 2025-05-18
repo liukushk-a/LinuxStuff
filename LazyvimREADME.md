@@ -66,5 +66,42 @@ Se invece volessi muovermi in una directory da dove sono, anche quì:
 
   :cd /directory/subdirectory 
 
+## Aprire un terminale
+
+Per aprire un terminale finora ho scoperto 2 modi.
+
+Con il primo modo si apre un terminale in basso, nella zona inferiore dello schermo, terminale classico, come quello che c'era su VSCode. Per aprirlo nella directory corrente, dove stai lavorando, la sintassi è:
+
+  <special>ft
+
+Se invece volessi aprirlo nella directory principale, la solita /home/liukushka/ , la sintassi è:
+
+  <special>fT 
+
+Per chiudere il terminale puoi fare:
+
+  ctrl d 
+
+Oppure puoi spostarti in un'altra finestra in cui stai lavorando e usare la stessa sintassi che hai usato per creare il terminale, insomma, come lo crei lo distruggi. Un altro modo per chiudere il terminale lo spiego tra poco, parlando del secondo modo per creare il terminale; tale modo per chiuderlo, infatti, funziona anche con questo tipo di terminale.
+
+Per creare un terminale come se fosse una finestra, invece, una finestra in cui puoi lavorare come se fosse uno script, puoi fare:
+
+  :term 
+
+Poi per entrare in modalità scrittura usi:
+
+  i 
+
+Per invece uscire dalla modalità terminale, la sintassi è questa:
+
+  ctrl \n 
+
+Quindi tenendo premuto control premi \n . Adesso entriamo in una cosa leggermente spinosa, perchè c'è una differenza per i due metodi, perchè se stai usando il terminale "floating", ovvero quello in basso, dopo aver fatto control \n, puoi fare direttamente :q. Se invece hai aperto il terminale come se fosse una finestra, dopo il control \n, devi usare la sintassi:
+
+  <special> bd 
+
+Questo è per chiudere il buffer, infatti le finestre aperte sono dei Buffer, ma ne parlerò più avanti.
+
+
 
 
