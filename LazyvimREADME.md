@@ -142,4 +142,10 @@ Per visualizzarlo devi fare:
 
 In questo modo ti basta splittare le finestre per avere a lato il markdown in preview e a sx lazyvim, così è comodo, stile vscode.
 
+## Precisazione sulle installazioni
+
+Potrebbe capitare che tu debba installare delle cose aggiuntive, come fd-find oppure fzf, che magari nemmeno ti interessano, però si possono installare ez e inoltre puoi capire cosa manca runnando:
+
+    :healthcheck
+
 

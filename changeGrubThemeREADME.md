@@ -23,3 +23,5 @@ Per finire, fai un update del grub in questo modo:
     sudo update-grub
 
 Presta attenzione a quando fai l'update del grub, perchè dovrebbe, tra le voci che ti sputa fuori sul terminale, dirti che ha trovato il tema.
+
+
