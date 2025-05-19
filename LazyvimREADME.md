@@ -130,6 +130,16 @@ In questo modo ti si apre un menu con cui puoi fare diverse azioni. Concentriamo
 
 Così hai aperto lazygit nella cartella del file che stai scrivendo. Per muoverti usi le lettere hjkl, ma anche le freccette, come sempre.
 
-Poi dentro lazygit posso usare la c per fare il commit, la p minuscola per il pull e la P maiuscola per il push. 
+Poi dentro lazygit posso usare la c per fare il commit, la p minuscola per il pull e la P maiuscola per il push.
+
+## Preview di Markdown su lazyvim
+
+Per visualizzare il markdown in preview ti apre una pagina di browser in locale e per farlo devi seguire le istruzioni su [questa pagina](https://www.reddit.com/r/neovim/comments/10w4u51/markdown_preview_on_lunarvim_and_lazyvim/). 
+
+Per visualizzarlo devi fare:
+
+    :Markdownpreview
+
+In questo modo ti basta splittare le finestre per avere a lato il markdown in preview e a sx lazyvim, così è comodo, stile vscode.
 
 
