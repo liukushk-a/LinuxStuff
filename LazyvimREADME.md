@@ -148,4 +148,8 @@ Potrebbe capitare che tu debba installare delle cose aggiuntive, come fd-find op
 
     :healthcheck
 
+## Eliminare un file
 
+Per eliminare il file, navighi dentro all'albero proprio come fai per aggiungerlo e poi premi semplicemente la lettera d.
+
+Nota bene che affinchè funzioni devi essere in modalità NORMAL, non INSERT.
