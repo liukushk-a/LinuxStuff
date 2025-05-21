@@ -73,7 +73,7 @@ Se adesso si esegue:
 
 Si dovrebbe ottenere questo:
 
-   /home/liukushka/Codes/SU2ADJ/bin/SU2_CFD 
+    /home/liukushka/Codes/SU2ADJ/bin/SU2_CFD 
 
 Adesso ci sono questioni da sistemare con python: non so se ho capito correttamente ma la versione di python potrebbe dare problemi, quindi sarebbe il caso di verificare per che versione di python la cosa funziona. Io uso al momento 3.12.3 e sta funzionando, quindi bene, ma in ogni caso sarebbe bene capirci qualcosa di che versione funziona e quale no.
 
@@ -104,6 +104,3 @@ La sintassi per chiamare la risoluzione con l'aggiunto è molto particolare e ma
     python3 $SU2_RUN/shape_optimization.py -g CONTINUOUS_ADJOINT -o SLSQP -f inv_NACA0012_basic.cfg -n 4
 
 Il motivo è che devi sempre dire a SU2 di prendere lo script python in quella posizione.
-
-
-
