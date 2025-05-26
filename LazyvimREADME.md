@@ -153,3 +153,12 @@ Potrebbe capitare che tu debba installare delle cose aggiuntive, come fd-find op
 Per eliminare il file, navighi dentro all'albero proprio come fai per aggiungerlo e poi premi semplicemente la lettera d.
 
 Nota bene che affinchè funzioni devi essere in modalità NORMAL, non INSERT.
+
+## Copilot su lazyvim
+
+Per utilizzare copilot su lazyvim devi avere una versione di nodejs superiore alla 20. Nel mio caso, al momento dell'installazione di Ubuntu, avevo la 18.x, quindi ho fatto l'upgrade con i seguenti comandi:
+
+    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+Nel caso te lo stessi chiedendo, ho trovato le informazioni [a questa pagina](https://askubuntu.com/questions/1265813/how-to-update-node-js-to-the-long-term-support-version-on-ubuntu-20-04).
