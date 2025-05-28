@@ -162,3 +162,27 @@ Per utilizzare copilot su lazyvim devi avere una versione di nodejs superiore al
     sudo apt-get install -y nodejs
 
 Nel caso te lo stessi chiedendo, ho trovato le informazioni [a questa pagina](https://askubuntu.com/questions/1265813/how-to-update-node-js-to-the-long-term-support-version-on-ubuntu-20-04).
+
+## Muoversi tra i buffer agilmente
+
+Per muoverti tra i buffer in modo agile, puoi usare il tasto shift e poi i tasti h per andare a sinistra e l per andare a destra. In questo modo ti muovi tra i buffer aperti, come se fossero delle schede di un browser.
+
+Ricordati sempre che è necessario essere in modalità NORMAL, altrimenti scrivi e basta.
+
+## Search and replace
+
+Per ricercare la parola che è sotto il cursore devi premere il tasto *. In questo modo potrai, usando N maiuscola (quindi shift+n) per muoverti indietro nelle varie volte in cui hai usato quella parola, oppure semplicemente n per andare avanti.
+
+Ci sono poi diversi modi per rimpiazzare le parole che hai ricercato, ma ho l'impressione che serva un provider per la clipboard, che tu devi ancora installare, quindi questa sezione aspetterà.
+
+## Usare vim come editor di testo
+
+Per usare vimtex c'è il plugin apposta, ma prima è necessario installare una cosa chiamata zathura, che è un visualizzatore di pdf. Per installarlo, puoi usare il seguente comando:
+
+    sudo apt install zathura
+
+Un'altra cosa da installare è latexmk, in questo modo:
+
+    sudo apt install latexmk
+
+
