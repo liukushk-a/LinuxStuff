@@ -185,4 +185,11 @@ Un'altra cosa da installare è latexmk, in questo modo:
 
     sudo apt install latexmk
 
+Poi ci sono da installare tutti i pacchetti, ovvero:
+
+    sudo apt install texlive-latex-extra
+
+Un'altra cosa da installare è il pacchetto full per latex, che pesa la bellezza di 6 gB, ma pazienza, è necessario, quindi fai:
+
+    sudo apt install texlive-full
 
