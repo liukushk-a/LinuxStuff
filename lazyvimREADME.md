@@ -175,7 +175,7 @@ Per ricercare la parola che è sotto il cursore devi premere il tasto *. In ques
 
 Ci sono poi diversi modi per rimpiazzare le parole che hai ricercato, ma ho l'impressione che serva un provider per la clipboard, che tu devi ancora installare, quindi questa sezione aspetterà.
 
-## Usare vim come editor di testo
+## Usare vim per il latex con vimtex
 
 Per usare vimtex c'è il plugin apposta, ma prima è necessario installare una cosa chiamata zathura, che è un visualizzatore di pdf. Per installarlo, puoi usare il seguente comando:
 
@@ -192,4 +192,13 @@ Poi ci sono da installare tutti i pacchetti, ovvero:
 Un'altra cosa da installare è il pacchetto full per latex, che pesa la bellezza di 6 gB, ma pazienza, è necessario, quindi fai:
 
     sudo apt install texlive-full
+
+Successivamente a questo, scrivo i principali comandi di vimtex, almeno, quelli che ritengo utili.
+
+Accendere e spegnere il compilatore con \ll 
+
+Vedere gli errori con \le
+
+Forzare la visualizzazione del pdf con \lv
+
 
