@@ -201,7 +201,7 @@ Vedere gli errori con \le
 
 Forzare la visualizzazione del pdf con \lv
 
-## Installare Lutris e Wine su ubuntu (per far girare NFS MW)
+## Installare Lutris e Wine su ubuntu (per far girare NFS MW) (Spoiler, non ci sono riuscito)
 
 Per installare Lutris e Wine su Ubuntu, puoi usare i seguenti comandi. Prima di tutto, aggiungi la repository di lutris a quelle viste da apt:
 
@@ -249,4 +249,5 @@ che nel mio caso è:
 
     wine /home/liukushka/Desktop/LinuxUser/Games/NFSMW/Patch/nfsmwpatch1.3.exe
 
-No, non riesco a farlo andare... pazienza, mi sa che lo lascio perdere per adesso, tanto non mi serve. 
+No, non riesco a farlo andare... pazienza, mi sa che lo lascio perdere per adesso, tanto non mi serve.
+
