@@ -221,4 +221,24 @@ Poi devo installare wine, ma prima le sue dipendenze, con:
 
     sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y wine64 wine32 libasound2-plugins:i386 libsdl2-2.0-0:i386 libdbus-1-3:i386 libsqlite3-0:i386
 
+Adesso bisogna rendere la cartella accessibile per la scrittura, quindi faccio:
+
+    sudo chown -R liukushka:liukushka /home/liukushka/Desktop/LinuxUser/Games/NFSMW
+
+Dentro le impostazioni di lutris per il gioco, arguments e wine prefi puoi lasciarli vuoti, di default. 
+
+Ora però c'è un altro problema, perchè il gioco si apre, ma mi dice che non riesce a leggere il CD-ROM, ma è ovvio, ho una iso, non un CD-ROM, quindi devo montare la partizione in una cartella e avviare il gioco dal terminale puntando a quella cartella. Faccio questo:
+
+    sudo mount -o loop /home/liukushka/Desktop/LinuxUser/Games/Need\ For\ Speed\ Most\ Wanted\ Black\ Edition.iso /home/liukushka/Games/mounted_iso_NFSMW
+
+Riceverai un messaggio d'errore, ma è tutto normale. Ciò che fai adesso e digitare nel terminale:
+
+    winecfg 
+
+Così puoi inserire le impostazioni su winecfg: devi eliminare il percorso :D che hai nei drivers e mettere il tuo :D, che punta alla cartella dove hai montato la iso, ovvero:
+
+    /home/liukushka/Games/mounted_iso_NFSMW
+
+Fatto ciò, però, devi scaricare un altro speed.exe, che ti permetterà di avviare il gioco senza CD fisico. Io ho usato [questo sito](https://www.nexusmods.com/needforspeedmostwanted2005/mods/64), che sembra affidabile. 
+
 
