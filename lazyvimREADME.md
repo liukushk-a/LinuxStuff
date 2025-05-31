@@ -239,6 +239,14 @@ Così puoi inserire le impostazioni su winecfg: devi eliminare il percorso :D ch
 
     /home/liukushka/Games/mounted_iso_NFSMW
 
-Fatto ciò, però, devi scaricare un altro speed.exe, che ti permetterà di avviare il gioco senza CD fisico. Io ho usato [questo sito](https://www.nexusmods.com/needforspeedmostwanted2005/mods/64), che sembra affidabile. 
+Fatto ciò, però, devi scaricare un altro speed.exe, che ti permetterà di avviare il gioco senza CD fisico. Almeno questo era ciò che credevo di dover fare, prima di leggere su archive.org che è già presente una patch nell'installazione. Io ho usato [questo sito](https://www.nexusmods.com/needforspeedmostwanted2005/mods/64), che sembra affidabile, ma dato che ho già la patch, non è necessario.
+
+Ciò che faccio ora è eseguire la patch da terminale, così:
+
+    wine /percorso/alla/patch/nfsmwpatch1.3.exe
+
+che nel mio caso è:
+
+    wine /home/liukushka/Desktop/LinuxUser/Games/NFSMW/Patch/nfsmwpatch1.3.exe
 
 
