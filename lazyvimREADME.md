@@ -249,4 +249,4 @@ che nel mio caso è:
 
     wine /home/liukushka/Desktop/LinuxUser/Games/NFSMW/Patch/nfsmwpatch1.3.exe
 
-
+No, non riesco a farlo andare... pazienza, mi sa che lo lascio perdere per adesso, tanto non mi serve. 
