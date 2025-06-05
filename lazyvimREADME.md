@@ -175,6 +175,18 @@ Per ricercare la parola che è sotto il cursore devi premere il tasto *. In ques
 
 Ci sono poi diversi modi per rimpiazzare le parole che hai ricercato, ma ho l'impressione che serva un provider per la clipboard, che tu devi ancora installare, quindi questa sezione aspetterà.
 
+Un modo carino di fare il search and replace non di ciò che hai sotto l'asterisco ma dalla barra di comando me l'ha spiegato chatGPT. Se ad esempio volessi cercare la parola "esempio" e sostituirla con la parola "prova":
+
+    :%s/esempio/prova/g
+
+La sintassi è semplice: % ti dice che devi cercare in tutto il file, s è per search, la prima parola è quella da cercare, la seconda è quella con cui vuoi sostituire e g sta per global, ovvero che lo fa in tutto il file. Se non metti g, ti sostituisce solo la prima occorrenza della parola.
+
+Una cosa che puoi fare è anche fare in modo che ti chieda la conferma prima di sostituire, in questo modo:
+
+    :%s/esempio/prova/gc
+
+Il c ti fa dire si o no ad ogni sostituzione, così puoi essere sicuro di non fare danni.
+
 ## Usare vim per il latex con vimtex
 
 Per usare vimtex c'è il plugin apposta, ma prima è necessario installare una cosa chiamata zathura, che è un visualizzatore di pdf. Per installarlo, puoi usare il seguente comando:
