@@ -263,3 +263,14 @@ che nel mio caso è:
 
 No, non riesco a farlo andare... pazienza, mi sa che lo lascio perdere per adesso, tanto non mi serve.
 
+## Comando undo 
+
+Per annullare una modifica che hai fatto ci sono due comandi.
+
+Il primo è molto sempluce, basta premere u, che ti fa tornare indietro di una modifica. Se invece vuoi tornare indietro di più modifiche, puoi premere u più volte.
+
+Il secondo è più macchinoso, si tratta di fare:
+
+    :undo
+
+
