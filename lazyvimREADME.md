@@ -273,4 +273,28 @@ Il secondo è più macchinoso, si tratta di fare:
 
     :undo
 
+Se poi invece vuoi annullare l'undo, ovvero tornare avanti, puoi usare:
 
+    :redo
+
+Oppure, meno macchinosamente, puoi premere ctrl+r.
+
+## Autosave 
+
+Ho abilitato questo plugin che salva in automatico. Dato che è lazy a caricarsi, per attivarlo devi farlo tu manualmente con:
+
+    :AStoggle
+
+Basta che lo fai una volta, poi si attiva da solo. Se vuoi disattivarlo, fai la stessa cosa, ovvero:
+
+    :AStoggle
+
+Leggi il messaggio che compare in alto a dx per vedere se è on oppure off.
+
+## Usare il ctrl+delete su neovim
+
+Per fare ciò che da ogni altra parte fai con control delete, quindi eliminare la parola dietro al cursore, su neovim lo fai con:
+
+    ctrl+w 
+
+Ma ricorda che questo funziona mentre sei in insert mode.
