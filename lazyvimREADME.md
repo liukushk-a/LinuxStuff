@@ -298,3 +298,18 @@ Per fare ciò che da ogni altra parte fai con control delete, quindi eliminare l
     ctrl+w 
 
 Ma ricorda che questo funziona mentre sei in insert mode.
+
+## Usare copilot su neovim
+
+Ricordati sempre che copilot ha un limite mensile di completions, quindi se stai scrivendo ad esempio un markdown o qualcosa così, devi spegnerlo, sennò sprechi gli aiuti. Si spegne con:
+
+    :Copilot disable 
+
+Se poi vuoi riattivarlo, usa:
+
+    :Copilot enable
+
+## Vedere file nascosti (hidden files, root files)
+
+Per vedere i file nascosti, dato che tu usi NeoTree, almeno credo, oppure forse no dato che sei su lazyvim e quindi neotree potrebbe essere integrato, comunque sia, quando apri l'albero con ctrl+e o con ctrl+E, tutto ciò che fai quando sei sopra l'albero è digitare ctrl+H, così mostri i file nascosti.
+
