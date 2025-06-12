@@ -16,6 +16,8 @@ Per aprire su un pannello laterale l'albero con tutte le cartelle e sottocartell
 
 La cosa interessante è che tu in teoria potresti usare sia la e minuscola che la E maiuscola e teoricamente dovresti riuscire ad aprire l'albero sia nella cartella in cui sei (e), che l'albero più generale partendo dalla cartella home (E).
 
+Se hai aperto l'albero troppo in profondità, puoi sempre usare il tasto per cancellare per muoverti indietro.
+
 ## Creare un file nell'albero
 
 Quando sei nell'albero puoi navigare sia con le freccette che con i tasti hjkl, di cui parlerò in seguito, ma anche banalmente con il mouse o col trackpad. Una volta che sei nella posizione dove vuoi creare il file, semplicemente premi la lettera a.
@@ -312,4 +314,3 @@ Se poi vuoi riattivarlo, usa:
 ## Vedere file nascosti (hidden files, root files)
 
 Per vedere i file nascosti, dato che tu usi NeoTree, almeno credo, oppure forse no dato che sei su lazyvim e quindi neotree potrebbe essere integrato, comunque sia, quando apri l'albero con ctrl+e o con ctrl+E, tutto ciò che fai quando sei sopra l'albero è digitare ctrl+H, così mostri i file nascosti.
-
