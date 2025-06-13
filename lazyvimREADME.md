@@ -189,6 +189,8 @@ Una cosa che puoi fare è anche fare in modo che ti chieda la conferma prima di 
 
 Il c ti fa dire si o no ad ogni sostituzione, così puoi essere sicuro di non fare danni.
 
+Un altro modo per fare la ricerca, molto piu veloce è usare il tasto / . Cerchi ciò che ti interessa, fai invio e poi con n e N come al solito ti muovi avanti e indietro.
+
 ## Usare vim per il latex con vimtex
 
 Per usare vimtex c'è il plugin apposta, ma prima è necessario installare una cosa chiamata zathura, che è un visualizzatore di pdf. Per installarlo, puoi usare il seguente comando:
